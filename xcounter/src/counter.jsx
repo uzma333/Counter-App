@@ -2,15 +2,15 @@ import React, { useState } from 'react'
 import styles from "./counter.module.css"
 
 function Counter() {
-    const[counter,setCounter]=useState();
+    const[count,setCount]=useState(0);
 
 
 const handleIncrement=()=>{
-    setCounter(counter+1)
+    setCount((prevState)=>prevState+1)
 }
 
 const handleDecrement=()=>{
-    setCounter(counter-1)
+    setCount((prevState)=>prevState-1)
 }
 
 
@@ -22,7 +22,7 @@ const handleDecrement=()=>{
   return (
     <div className={styles.counter}>
         <h1>Counter App</h1>
-        <p>Count: {counter}</p>
+        <p>Count: {count}</p>
         <button onClick={handleIncrement}>Increment</button>
         <button onClick={handleDecrement}>Decrement</button>
 
